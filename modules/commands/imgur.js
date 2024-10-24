@@ -1,7 +1,7 @@
 const axios = require("axios");
 const baseApiUrl = async () => {
   const base = await axios.get(
-    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`,
+    `https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json`,
   );
   return base.data.api;
 };
@@ -30,9 +30,9 @@ const baseApiUrl = async () => {
     }
     try {
       const res = await axios.get(
-        `${await baseApiUrl()}/imgur?url=${encodeURIComponent(dip)}`,
+        `${await baseApiUrl()}/imgurv2?link=${encodeURIComponent(dip)}`,
       );
-      const dipto = res.data.data;
+      const dipto = res.data.uploaded.image;
       api.sendMessage(dipto, event.threadID, event.messageID);
     } catch (error) {
       console.error(error);
