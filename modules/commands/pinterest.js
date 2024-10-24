@@ -1,5 +1,5 @@
 module.exports.config = {
-    name: "pinterest",
+    name: "pic",
     version: "1.0.0",
     hasPermssion: 0,
     credits: "Joshua Sy",
@@ -13,11 +13,13 @@ module.exports.run = async function({ api, event, args }) {
     const axios = require("axios");
     const fs = require("fs-extra");
     const request = require("request");
+    const apis = await axios.get('https://raw.githubusercontent.com/shaonproject/Shaon/main/api.json')
+  const Shaon = apis.data.api
     const keySearch = args.join(" ");
     if(keySearch.includes("-") == false) return api.sendMessage('Please enter in the format, example: pinterest Naruto - 10 (it depends on you how many images you want to appear in the result)', event.threadID, event.messageID)
     const keySearchs = keySearch.substr(0, keySearch.indexOf('-'))
     const numberSearch = keySearch.split("-").pop() || 6
-    const res = await axios.get(`https://api-dien.kira1011.repl.co/pinterest?search=${encodeURIComponent(keySearchs)}`);
+    const res = await axios.get(`${Shaon}/pinterest?search=${encodeURIComponent(keySearchs)}`);
     const data = res.data.data;
     var num = 0;
     var imgData = [];
