@@ -1,5 +1,5 @@
 module.exports.config = {
-	name: "admin",
+	name: "admin2",
 	version: "1.0.5",
 	hasPermssion: 0,
 	credits: "Mirai Team",
