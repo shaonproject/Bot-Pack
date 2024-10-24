@@ -20,7 +20,7 @@
     "Yan Maglinte"
   ],
   "license": "GPL-3.0",
-  "author": "Yan Maglinte",
+  "author": "SHAON AHMED",
   "dependencies": {
     "@distube/ytdl-core": "^4.14.4",
     "aes-js": "^3.1.2",
